@@ -1077,8 +1077,8 @@ public class Lumi extends BaseContent {
 			if (player.hasKeyItem("Blueprint - Gun Scope with Aimbot") >= 0) outputText("Gun Scope with Aimbot - Req. 100+ int, Toolbelt, 10 metal pieces, 500 nails, 1 energy core.\n");
 			if (player.hasKeyItem("Blueprint - Gun Scope with Aim tech") >= 0) outputText("Gun Scope with Aim tech - Req. 75+ int, Gun Scope, 5 metal pieces, 300 nails.\n");
 			if (player.hasKeyItem("Blueprint - Gun Scope") >= 0) outputText("Gun Scope - Req. 50+ int, Toolbelt, 1 metal piece, 100 nails.\n");
-			if (player.hasKeyItem("Blueprint - Nitro Boots") >= 0) outputText("Nitro Boots - Req. 100+ int, Rocket Boots, 15 metal pieces, 300 nails, 3 mechanism, 5 firemander whiskey.\n");
-			if (player.hasKeyItem("Blueprint - Rocket Boots") >= 0) outputText("Rocket Boots - Req. 75+ int, Spring Boots, 10 metal pieces, 200 nails, 1 firemander whiskey, 2 mechanism.\n");
+			if (player.hasKeyItem("Blueprint - Nitro Boots") >= 0) outputText("Nitro Boots - Req. 100+ int, Rocket Boots, 15 metal pieces, 300 nails, 3 mechanism, 5 salamander firewaters.\n");
+			if (player.hasKeyItem("Blueprint - Rocket Boots") >= 0) outputText("Rocket Boots - Req. 75+ int, Spring Boots, 10 metal pieces, 200 nails, 1 salamander firewater, 2 mechanism.\n");
 			if (player.hasKeyItem("Blueprint - Spring Boots") >= 0) outputText("Spring Boots - Req. 50+ int, Toolbelt, 5 metal pieces, 100 nails, 1 mechanism.\n");
 			if (player.hasKeyItem("Blueprint - M.G.S. bracer") >= 0) outputText("M.G.S. bracer - Req. 100+ int, Powboy, 10 metal pieces, 500 nails, 4 energy core.\n");
 			if (player.hasKeyItem("Blueprint - Powboy") >= 0) outputText("Powboy - Req. 75+ int, Power bracer, 5 metal pieces, 200 nails, 1 energy core.\n");
