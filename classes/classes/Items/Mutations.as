@@ -9204,12 +9204,18 @@ public final class Mutations extends MutationsHelper {
 	
 	public function midnightGossamer(player:Player):void {
 		clearOutput();
+<<<<<<< .merge_file_a27016
 
+=======
+>>>>>>> .merge_file_a23608
 		var changeLimit:Number = 1;
 		if (rand(2) == 0) changeLimit++;
 		if (rand(2) == 0) changeLimit++;
 		changeLimit += additionalTransformationChances();
+<<<<<<< .merge_file_a27016
 
+=======
+>>>>>>> .merge_file_a23608
 		outputText("You wad up the sweet, midnight gossamer and eat it, finding it to be delicious and chewy, almost like licorice.  Munching away, your mouth generates an enormous amount of spit until you're drooling all over yourself while you devour the sweet treat. ");
 		TransformationUtils.pickAndRunMultipleEffects(
 				transformations.List_AtlachNacha,

@@ -38,6 +38,25 @@ use namespace CoC;
                 addButton(3, "Fall back", findDefiledRavineNo);
 				return;
 			}
+<<<<<<< .merge_file_a08784
+=======
+
+			var ChanceToFindTheDen = 20;
+			if (SceneLib.dungeons.canFindDenOfDesire()) ChanceToFindTheDen -= 9;
+			if (flags[kFLAGS.DEN_OF_DESIRE_QUEST] > 0) ChanceToFindTheDen -= 9;
+			//Den of Desire
+			if (flags[kFLAGS.DEN_OF_DESIRE_BOSSES] < 1 && rand(ChanceToFindTheDen) == 0) {
+				clearOutput();
+				outputText("You come across a set of old ruins, their grounds littered with statues, with an underground entrance leading deeper inside. ");
+				if (flags[kFLAGS.DEN_OF_DESIRE_QUEST] > 0) outputText("This looks to be the lair of the golemancer Rathazul mentioned. ");
+				outputText("Do you enter?");
+				flags[kFLAGS.DEN_OF_DESIRE_BOSSES] = 1;
+				menu();
+				addButton(0, "Yes", SceneLib.dungeons.enterDenOfDesire);
+				addButton(1, "No", camp.returnToCampUseOneHour);
+				return;
+			}
+>>>>>>> .merge_file_a28580
 			
 			//Dart pistol
 			if (player.hasStatusEffect(StatusEffects.TelAdreTripxiGuns1) && player.statusEffectv2(StatusEffects.TelAdreTripxiGuns1) == 0 && player.hasKeyItem("Dart pistol") < 0 && rand(2) == 0) {
@@ -58,6 +77,7 @@ use namespace CoC;
 				startCombat(new DemonPackBlightRidge());
 				return;
 			}
+<<<<<<< .merge_file_a08784
 			//Den of Desire
             if (SceneLib.dungeons.canFindDenOfDesire() && flags[kFLAGS.DEN_OF_DESIRE_BOSSES] < 1 && ((rand(10) == 0) || (flags[kFLAGS.DEN_OF_DESIRE_QUEST] > 0 && rand(2) == 0))) {
                 clearOutput();
@@ -70,6 +90,8 @@ use namespace CoC;
                 addButton(1, "No", camp.returnToCampUseOneHour);
 				return;
 			}
+=======
+>>>>>>> .merge_file_a28580
 			//Siegweird
 			if (player.statusEffectv1(StatusEffects.AlvinaTraining2) == 3 && rand(4) == 0) {
 				if (flags[kFLAGS.SIEGWEIRD_FOLLOWER] < 3) SceneLib.siegweirdFollower.siegweirdFirstEncounter();

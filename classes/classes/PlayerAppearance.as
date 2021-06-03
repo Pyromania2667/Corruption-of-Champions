@@ -448,7 +448,11 @@ public class PlayerAppearance extends BaseContent {
 					outputText(", unlike a normal pussy, feels and acts akin to a mouth that allows you to taste and savor the flavor of the cum injected within as if it landed on your tongue. Your sensitive walls are also prehensile, and you can control them to milk a cock just as well as your hand could. Your dexterous, cum-hungry twat hides a ");
 					break;
 				case VaginaClass.NAGA:
+<<<<<<< .merge_file_a04204
 					outputText(" is deep and wide enought to insert your entire arm lenght inside and some more. Sometime you lament that most of your partners are no longer big enough to satisfy you");
+=======
+					outputText(" is deep and wide enough to insert your entire arm lenght inside and some more. Sometime you lament that most of your partners are no longer big enough to satisfy you");
+>>>>>>> .merge_file_a31496
 					if (player.lowerBody == LowerBody.NAGA) outputText("as your hot spot is now way further inside your lenghtly canal requiring quite a longer member to reach");
 							outputText(". Inside you have a ");
 					break;
@@ -2470,8 +2474,13 @@ public class PlayerAppearance extends BaseContent {
 		//GARGOYLE
 		if (player.gargoyleScore() >= 20 && player.hasPerk(PerkLib.GargoylePure)) {
 			outputText("\n<font color=\"#0000a0\">PURE GARGOYLE: " + player.gargoyleScore() + " (+");
+<<<<<<< .merge_file_a04204
 			if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 1) outputText("165% to Str racial multi, +250% to Tou racial multi, +50% to Spe racial multi, +30");
 			if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 2) outputText("50% to Str racial multi, +250% to Tou racial multi, +30% to Spe racial multi, +165");
+=======
+			if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 1) outputText("195% to Str racial multi, +250% to Tou racial multi, +50% to Spe racial multi, +30");
+			if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 2) outputText("50% to Str racial multi, +250% to Tou racial multi, +30% to Spe racial multi, +195");
+>>>>>>> .merge_file_a31496
 			outputText("% to Int racial multi, +80% to Wis racial multi, -10% to Lib racial multi, -10 max Sens, +");
 			if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 1) outputText("" + (60 * (1 + player.newGamePlusMod())) + " Armor, +" + (10 * (1 + player.newGamePlusMod())) + " spell resistance");
 			if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 2) outputText("" + (10 * (1 + player.newGamePlusMod())) + " Armor, +" + (60 * (1 + player.newGamePlusMod())) + " spell resistance");

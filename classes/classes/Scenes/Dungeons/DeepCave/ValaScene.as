@@ -933,6 +933,10 @@ public class ValaScene extends BaseContent implements SaveableState
 				if (player.breastRows[0].breastRating < 6 && rand(5) == 0) growth++;
 			}
 			player.createPerk(PerkLib.TransformationImmunityFairy,0,0,0,0)
+<<<<<<< .merge_file_a31000
+=======
+			player.removeAllRacialMutation();
+>>>>>>> .merge_file_a14056
 			outputText("\n\n");
 			CoC.instance.mainViewManager.updateCharviewIfNeeded();
 			inventory.takeItem(armors.FQR, camp.returnToCampUseOneHour);

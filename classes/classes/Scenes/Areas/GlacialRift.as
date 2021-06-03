@@ -19,6 +19,10 @@ import classes.Scenes.Areas.Tundra.Valkyrie;
 import classes.Scenes.Holidays;
 import classes.Scenes.NPCs.GooArmor;
 import classes.Scenes.SceneLib;
+<<<<<<< .merge_file_a27664
+=======
+import classes.display.SpriteDb;
+>>>>>>> .merge_file_a19716
 
 use namespace CoC;
 
@@ -134,6 +138,10 @@ use namespace CoC;
 					break;
 				case 3: //Winter Wolf
 					clearOutput();
+<<<<<<< .merge_file_a27664
+=======
+					spriteSelect(SpriteDb.s_winterWolf);
+>>>>>>> .merge_file_a19716
 					outputText("A titanic howling sound is heard nearby as an enormous shape jump off a nearby cliff into the snow right in front of you. As the flying snow clear off you see a wolf of immaculate pelt and size bordering the absurd. You likely accidentally stepped into its hunting territory and to clearly show its displeasure the ten feet tall monster growl at you showing its dagger-like teeth then start running in your direction howling what sounds to be a challenge.\n\n");
 					GlacialRiftConditions();
 					startCombat(new WinterWolf());

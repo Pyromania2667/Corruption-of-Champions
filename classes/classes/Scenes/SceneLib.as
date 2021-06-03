@@ -8,6 +8,10 @@ import classes.Scenes.Areas.Forest.KitsuneScene;
 import classes.Scenes.Areas.GlacialRift.FrostGiantScene;
 import classes.Scenes.Areas.GlacialRift.YuWinterGearShop;
 import classes.Scenes.Areas.Ocean.ScyllaScene;
+<<<<<<< .merge_file_a27060
+=======
+import classes.Scenes.Camp.HarvestMoonScenes;
+>>>>>>> .merge_file_a27572
 import classes.Scenes.Combat.Combat;
 import classes.Scenes.Dungeons.AnzuPalace.AnzuScene;
 import classes.Scenes.Dungeons.D3.D3;
@@ -147,6 +151,11 @@ public class SceneLib {
 
     public static var galiaFollower:GaliaFollower = new GaliaFollower();
 
+<<<<<<< .merge_file_a27060
+=======
+    public static var harvestMoonScene:HarvestMoonScenes = new HarvestMoonScenes();
+
+>>>>>>> .merge_file_a27572
     public static var helFollower:HelFollower = new HelFollower();
 
     public static var helScene:HelScene = new HelScene();

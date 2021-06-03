@@ -245,6 +245,11 @@ public class SpriteDb {
 	public static function get s_fetish_zealot(): Class {
 		return is8bit ? s_fetish_zealot_8bit : s_fetish_zealot_16bit;
 	}
+<<<<<<< .merge_file_a12200
+=======
+	[Embed(source="../../../res/sprites/gargoyle.png")]
+	public static var s_gargoyle:Class;
+>>>>>>> .merge_file_a31576
 	[Embed(source="../../../res/sprites8bit/shouldra-normal-old.png")]
 	public static var s_ghostGirl_8bit:Class;
 	public static function get s_ghostGirl(): Class {
@@ -797,6 +802,11 @@ public class SpriteDb {
 	public static function get s_valeria(): Class {
 		return is8bit ? s_valeria_8bit : s_valeria_16bit;
 	}
+<<<<<<< .merge_file_a12200
+=======
+	[Embed(source="../../../res/sprites/winterWolf.png")]
+	public static var s_winterWolf:Class;
+>>>>>>> .merge_file_a31576
 	[Embed(source="../../../res/sprites/yamata.png")]
 	public static const s_yamata_16bit:Class;
 	public static function get s_yamata():Class {

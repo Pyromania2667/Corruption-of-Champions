@@ -5986,4 +5986,8 @@ public class PhysicalSpecials extends BaseCombatContent {
 	public function PhysicalSpecials() {
 	}
 }
+<<<<<<< .merge_file_a01176
 }
+=======
+}
+>>>>>>> .merge_file_a15300

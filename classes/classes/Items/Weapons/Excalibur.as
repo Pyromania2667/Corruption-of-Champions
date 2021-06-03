@@ -14,11 +14,19 @@ package classes.Items.Weapons
 		
 		public function Excalibur() 
 		{
+<<<<<<< .merge_file_a01044
 			super("Excalib", "Excalibur", "Excalibur", "an Excalibur", "slash", 10, 800, "A legendary sword said to have been made by Marae for her champion. This weapon radiates divine power, purifying its wielder and protecting them from impurity.");
 		}
 		
 		override public function get attack():Number { 
 			var temp:int = 10 + int((30 - game.player.cor) / 3);
+=======
+			super("Excalib", "Excalibur", "Excalibur", "an Excalibur", "slash", 40, 800, "A legendary sword said to have been made by Marae for her champion. This weapon radiates divine power, purifying its wielder and protecting them from impurity.");
+		}
+		
+		override public function get attack():Number { 
+			var temp:int = 10 + int((90 - game.player.cor) / 3);
+>>>>>>> .merge_file_a12428
 			if (temp < 10) temp = 10;
 			return temp; 
 		}
