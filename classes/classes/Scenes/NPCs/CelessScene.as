@@ -385,7 +385,7 @@ public class CelessScene extends XXCNPC implements TimeAwareInterface {
 
 		function improveItem(item:ItemType, from:ItemType):void {
 			//scene("strings/itemImprove/improveThatItem", myLocals);
-			outputText("You ask" + _name + " if she could imbue an item with her power.\n\n"+
+			outputText("You ask " + _name + " if she could imbue an item with her power.\n\n"+
 			"<i>\"Certainly mother! Just leave the item on the ground and let me get to work.\"</i>\n\n"+
 			_name + " trots over to the item and starts channeling power.");
 			if (isCorrupt){
