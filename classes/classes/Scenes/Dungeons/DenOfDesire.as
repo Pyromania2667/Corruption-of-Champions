@@ -68,7 +68,7 @@ public class DenOfDesire extends DungeonAbstractContent
 				uniquuuesexscene.AlrauneDungeonBadEnd();
 			}
 			else {
-				outputText("<b>Several years later</b>\n\n");
+				outputText("<i>Countless years pass</i>\n\n");
 				outputText("Master is so good with you, allowing you to rape intruders is the best! You've been masturbating for several day on your pedestal just to make this one orgasm perfect, and just as this woman fell down to the devastating power of your assault, you felt the magic restraint on your orgasm shatter, just as you mounted both her ass and her pussy with your duo of penises penetrating her and filling her body with the oozing corruption coming out of your many Lethicite cores. ");
 				outputText("Each woman or man you fuck becomes a new demon and each soul you steal fuels you with more power and desire. It is just so good and right to serve.\n\n");
 				outputText("You've long forgotten everything about your past life. You are ‘master’s’ fuck toy and pet now and your only duty and joy is as ‘master’s’ tool, to thoroughly rape anyone who dares to enter these ruins.\n\n");
@@ -78,7 +78,7 @@ public class DenOfDesire extends DungeonAbstractContent
 		}
 		public function defeatedHeroslayerOmnibus():void {
 			clearOutput();
-			outputText("You stand triumphant before the omnibus and do the only thing suitable for such a foul being as her. A few seconds later, she finally lay dead at your feet, no longer a menace and you have access to her somewhat large library of research. Her knowledge of golems is quite vast, maybe even horrifyingly so due to what she intended to use it for. This woman must have known about them when she was still human or at least must have taken a strong interest in them as a demon. ");
+			outputText("Without hesitation, you finish the deed as you slay the Omnibus. The omnibus flinches before collapsing lifelessly, no longer a menace to anyone. Now, you have access to her fair library of research. Her knowledge of golems is quite vast, maybe even horrifyingly so due to what she intended to use it for. This woman must have known about them when she was still human or at least must have taken a strong interest in them as a demon. ");
 			if (flags[kFLAGS.GARGOYLE_QUEST] == 5) {
 				outputText("Regardless of the reason, she had exactly whatever missing information you needed to finish the ritual. ");
 				flags[kFLAGS.GARGOYLE_QUEST]++;
@@ -95,7 +95,7 @@ public class DenOfDesire extends DungeonAbstractContent
 			dungeonLoc = 64;
 			clearOutput();
 			outputText("<b><u>Entrance</u></b>\n");
-			outputText("You stand in what looks like the entrance to some very old ruins, yet for some reason it's uncharacteristically tidy and clean. Likely something lives here, and not something friendly either.");
+			outputText("You stand in what appears to be the entrance to archaic ruins, yet for some reason it's uncharacteristically tidy and clean. Likely something lives here, and not something friendly either.");
 			dungeons.setDungeonButtons(roomGreatHallArea, null, null, null);
 			addButton(11, "Leave", exitDungeon);
 		}
