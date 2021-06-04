@@ -491,21 +491,14 @@ use namespace CoC;
 			return (lowerBody == LowerBody.HINEZUMI && arms.type == Arms.HINEZUMI) || isFeralStancing() || isSitStancing();
 		}
 		public function isSitStancing():Boolean {
-<<<<<<< .merge_file_a21560
-			return (lowerBody == LowerBody.LION && arms.type == Arms.LION) || ((lowerBody == LowerBody.GARGOYLE || lowerBody == LowerBody.GARGOYLE_2) && (arms.type == Arms.GARGOYLE || arms.type == Arms.GARGOYLE_2));
-=======
 			return (lowerBody == LowerBody.LION && arms.type == Arms.LION);
->>>>>>> .merge_file_a09572
 		}
 		public function isFeralStancing():Boolean {
 			return (lowerBody == LowerBody.WOLF && arms.type == Arms.WOLF) || (lowerBody == LowerBody.LION && arms.type == Arms.DISPLACER);
 		}
-<<<<<<< .merge_file_a21560
-=======
 		public function isGargoyleStancing():Boolean {
 			return (lowerBody == LowerBody.GARGOYLE || lowerBody == LowerBody.GARGOYLE_2) && (arms.type == Arms.GARGOYLE || arms.type == Arms.GARGOYLE_2);
 		}
->>>>>>> .merge_file_a09572
 		//Natural Armor (need at least to partialy covering whole body)
 		public function haveNaturalArmor():Boolean
 		{
@@ -574,12 +567,6 @@ use namespace CoC;
 				else if (dragonScore() >= 24) armorDef += (4 * newGamePlusMod);
 				else armorDef += (1 * newGamePlusMod);
 			}
-<<<<<<< .merge_file_a21560
-			//Bonus defense
-			if (arms.type == Arms.YETI) armorDef += (1 * newGamePlusMod);
-			if (arms.type == Arms.SPIDER || arms.type == Arms.MANTIS || arms.type == Arms.BEE || arms.type == Arms.SALAMANDER) armorDef += (2 * newGamePlusMod);
-			if (arms.type == Arms.DRAGON || arms.type == Arms.FROSTWYRM) armorDef += (3 * newGamePlusMod);
-=======
 			if (frostWyrmScore() >= 20) {
 				if (frostWyrmScore() >= 30) armorDef += (10 * newGamePlusMod);
 				else if (frostWyrmScore() >= 24) armorDef += (4 * newGamePlusMod);
@@ -594,28 +581,24 @@ use namespace CoC;
 			if (arms.type == Arms.YETI) armorDef += (1 * newGamePlusMod);
 			if (arms.type == Arms.SPIDER || arms.type == Arms.MANTIS || arms.type == Arms.BEE || arms.type == Arms.SALAMANDER) armorDef += (2 * newGamePlusMod);
 			if (arms.type == Arms.DRAGON || arms.type == Arms.FROSTWYRM || arms.type == Arms.SEADRAGON) armorDef += (3 * newGamePlusMod);
->>>>>>> .merge_file_a09572
 			if (arms.type == Arms.HYDRA) armorDef += (4 * newGamePlusMod);
 			if (tailType == Tail.SPIDER_ADBOMEN || tailType == Tail.MANTIS_ABDOMEN || tailType == Tail.BEE_ABDOMEN) armorDef += (2 * newGamePlusMod);
 			if (tailType == Tail.DRACONIC) armorDef += (3 * newGamePlusMod);
 			if (lowerBody == LowerBody.FROSTWYRM) armorDef += (6 * newGamePlusMod);
 			if (lowerBody == LowerBody.YETI) armorDef += (1 * newGamePlusMod);
 			if (lowerBody == LowerBody.CHITINOUS_SPIDER_LEGS || lowerBody == LowerBody.BEE || lowerBody == LowerBody.MANTIS || lowerBody == LowerBody.SALAMANDER) armorDef += (2 * newGamePlusMod);
-<<<<<<< .merge_file_a21560
-			if (lowerBody == LowerBody.DRAGON) armorDef += (3 * newGamePlusMod);
-=======
 			if (lowerBody == LowerBody.DRAGON || lowerBody == LowerBody.SEADRAGON) armorDef += (3 * newGamePlusMod);
->>>>>>> .merge_file_a09572
 			if (lowerBody == LowerBody.DRIDER || lowerBody == LowerBody.HYDRA) armorDef += (4 * newGamePlusMod);
 			if (rearBody.type == RearBody.YETI_FUR) armorDef += (4 * newGamePlusMod);
 			if (hasPerk(PerkLib.Lycanthropy)) armorDef += 10 * newGamePlusMod;
 			if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 1) {
-				if (arms.type == Arms.GARGOYLE || arms.type == Arms.GARGOYLE_2) armorDef += (10 * newGamePlusMod);
-				if (tailType == Tail.GARGOYLE || tailType == Tail.GARGOYLE_2) armorDef += (10 * newGamePlusMod);
-				if (lowerBody == LowerBody.GARGOYLE || lowerBody == LowerBody.GARGOYLE_2) armorDef += (10 * newGamePlusMod);
-				if (wings.type == Wings.GARGOYLE_LIKE_LARGE) armorDef += (10 * newGamePlusMod);
-				if (faceType == Face.DEVIL_FANGS) armorDef += (10 * newGamePlusMod);
+				if (arms.type == Arms.GARGOYLE || arms.type == Arms.GARGOYLE_2) armorDef += (30 * newGamePlusMod);
+				if (tailType == Tail.GARGOYLE || tailType == Tail.GARGOYLE_2) armorDef += (30 * newGamePlusMod);
+				if (lowerBody == LowerBody.GARGOYLE || lowerBody == LowerBody.GARGOYLE_2) armorDef += (30 * newGamePlusMod);
+				if (wings.type == Wings.GARGOYLE_LIKE_LARGE) armorDef += (30 * newGamePlusMod);
+				if (faceType == Face.DEVIL_FANGS) armorDef += (30 * newGamePlusMod);
 			}
+			if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 2) armorDef += (25 * newGamePlusMod);
 			//Soul Cultivators bonuses
 			if (hasPerk(PerkLib.BodyCultivator)) {
 				armorDef += (1 * newGamePlusMod);
@@ -813,12 +796,13 @@ use namespace CoC;
 			if (lowerBody == LowerBody.DRAGON) armorMDef += (3 * newGamePlusMod);
 			if (lowerBody == LowerBody.DRIDER) armorMDef += (4 * newGamePlusMod);
 			//if (hasPerk(PerkLib.Vulpesthropy)) armorMDef += 10 * newGamePlusMod;
+			if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 1) armorMDef += (25 * newGamePlusMod);
 			if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 2) {
-				if (arms.type == Arms.GARGOYLE || arms.type == Arms.GARGOYLE_2) armorMDef += (10 * newGamePlusMod);
-				if (tailType == Tail.GARGOYLE || tailType == Tail.GARGOYLE_2) armorMDef += (10 * newGamePlusMod);
-				if (lowerBody == LowerBody.GARGOYLE || lowerBody == LowerBody.GARGOYLE_2) armorMDef += (10 * newGamePlusMod);
-				if (wings.type == Wings.GARGOYLE_LIKE_LARGE) armorMDef += (10 * newGamePlusMod);
-				if (faceType == Face.DEVIL_FANGS) armorMDef += (10 * newGamePlusMod);
+				if (arms.type == Arms.GARGOYLE || arms.type == Arms.GARGOYLE_2) armorMDef += (30 * newGamePlusMod);
+				if (tailType == Tail.GARGOYLE || tailType == Tail.GARGOYLE_2) armorMDef += (30 * newGamePlusMod);
+				if (lowerBody == LowerBody.GARGOYLE || lowerBody == LowerBody.GARGOYLE_2) armorMDef += (30 * newGamePlusMod);
+				if (wings.type == Wings.GARGOYLE_LIKE_LARGE) armorMDef += (30 * newGamePlusMod);
+				if (faceType == Face.DEVIL_FANGS) armorMDef += (30 * newGamePlusMod);
 			}
 			//Soul Cultivators bonuses
 			if (hasPerk(PerkLib.FleshBodyApprenticeStage)) {
@@ -1133,6 +1117,11 @@ use namespace CoC;
 			return weaponRangePerk == "Bow" || weaponRangePerk == "Crossbow";
 		}
 		//Is in ... mech (large sized races mech)(have upgrade option to allow smaller than large races pilot it)
+		//Player have any party member with them
+		public function companionsInPCParty():Boolean
+		{
+			return flags[kFLAGS.PLAYER_COMPANION_1] != "" || flags[kFLAGS.PLAYER_COMPANION_2] != "" || flags[kFLAGS.PLAYER_COMPANION_3] != "";
+		}
 		//Natural Jouster perks req check
 		public function isMeetingNaturalJousterReq():Boolean
 		{
@@ -3126,11 +3115,7 @@ use namespace CoC;
 				{name: 'bat', score: batScore(), minscore: 6},
 				{name: 'vampire', score: vampireScore(), minscore: 6},
 				{name: 'jiangshi', score: jiangshiScore(), minscore: 20},
-<<<<<<< .merge_file_a21560
-				{name: 'gargoyle', score: gargoyleScore(), minscore: 20},
-=======
 				{name: 'gargoyle', score: gargoyleScore(), minscore: 22},
->>>>>>> .merge_file_a09572
 				{name: 'kamaitachi', score: kamaitachiScore(), minscore: 7},
 				{name: 'ratatoskr', score: ratatoskrScore(), minscore: 6},
 				{name: 'wendigo', score: wendigoScore(), minscore: 10},
@@ -4756,11 +4741,7 @@ use namespace CoC;
 				chimeraCounter++;
 			if (avianScore() >= 9)
 				chimeraCounter++;
-<<<<<<< .merge_file_a21560
-			if (gargoyleScore() >= 20)
-=======
 			if (gargoyleScore() >= 22)
->>>>>>> .merge_file_a09572
 				chimeraCounter++;
 			if (gooScore() >= 11)
 				chimeraCounter++;
@@ -5455,11 +5436,11 @@ use namespace CoC;
 			if (skinType == Skin.PLAIN && skinAdj == "flawless")
 				fairyCounter++;
 			if (hasPerk(PerkLib.FeyArcaneBloodstream))
-				fairyCounter++;
+				fairyCounter += 3;
 			if (hasPerk(PerkLib.FeyArcaneBloodstreamEvolved))
-				fairyCounter++;
+				fairyCounter += 3;
 			if (hasPerk(PerkLib.FeyArcaneBloodstreamFinalForm))
-				fairyCounter++;
+				fairyCounter += 3;
 			if (hasPerk(PerkLib.ChimericalBodyUltimateStage))
 				fairyCounter += 50;
 			if (hasPerk(PerkLib.AscensionHybridTheory) && fairyCounter >= 4)
@@ -7264,11 +7245,7 @@ use namespace CoC;
 				LeviathanCounter++;
 			if (tallness >= 84)
 				LeviathanCounter++;
-<<<<<<< .merge_file_a21560
-			if (biggestTitSize() > 19 || (cocks.length > 18))
-=======
 			if ((hasVagina() && biggestTitSize() > 19) || (cocks.length > 18))
->>>>>>> .merge_file_a09572
 				LeviathanCounter++;
 			if (hasPerk(PerkLib.DrakeLungs))
 				LeviathanCounter++;
@@ -10042,11 +10019,7 @@ use namespace CoC;
 		public function gargoyleScore():Number {
 			Begin("Player","racialScore","gargoyle");
 			var gargoyleCounter:Number = 0;
-<<<<<<< .merge_file_a21560
-			if (InCollection(hairColor, ["light grey", "quartz white"]))
-=======
 			if (InCollection(hairColor, ["light gray", "quartz white"]))
->>>>>>> .merge_file_a09572
 				gargoyleCounter++;
 			if (InCollection(skin.base.color, ["light gray", "quartz white"]))
 				gargoyleCounter++;
@@ -10071,11 +10044,7 @@ use namespace CoC;
 			if (lowerBody == LowerBody.GARGOYLE || lowerBody == LowerBody.GARGOYLE_2)
 				gargoyleCounter++;
 			if (wings.type == Wings.GARGOYLE_LIKE_LARGE)
-<<<<<<< .merge_file_a21560
-				gargoyleCounter += 2;
-=======
 				gargoyleCounter += 4;
->>>>>>> .merge_file_a09572
 			if (gills.type == Gills.NONE)
 				gargoyleCounter++;
 			if (rearBody.type == RearBody.NONE)
@@ -11565,24 +11534,6 @@ use namespace CoC;
 					maxIntCap2 += 25;
 				}
 			}
-			if (fairyScore() >= 23) {
-				if (fairyScore() >= 26) {
-					maxStrCap2 -= 25;
-					maxTouCap2 -= 10;
-					maxSpeCap2 += 200;
-					maxIntCap2 += 200;
-					maxWisCap2 += 45;
-					currentSen += 20;
-				}
-				else {
-					maxStrCap2 -= 25;
-					maxTouCap2 -= 10;
-					maxSpeCap2 += 185;
-					maxIntCap2 += 185;
-					maxWisCap2 += 30;
-					currentSen += 20;
-				}
-			}//+10/10-20
 			if (cancerScore() >= 8) {
 				if (cancerScore() >= 20) {
 					maxStrCap2 += 125;
@@ -12798,39 +12749,57 @@ use namespace CoC;
 				maxWisCap2 += 130;
 				maxLibCap2 += 200;
 			}//+110 strength +80 toughness +60 Wisdom +100 Libido +50 sensitivity
-<<<<<<< .merge_file_a21560
-			if (gargoyleScore() >= 20) {
+			if (gargoyleScore() >= 22) {//990
 				if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 1) {
-					maxStrCap2 += 165;
-=======
-			if (gargoyleScore() >= 22) {
-				if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 1) {
-					maxStrCap2 += 195;
->>>>>>> .merge_file_a09572
-					maxTouCap2 += 250;
-					maxSpeCap2 += 50;
-					maxIntCap2 += 30;
+					maxStrCap2 += 300;
+					maxTouCap2 += 510;
+					maxSpeCap2 += 100;
+					maxIntCap2 += 80;
 				}
 				if (flags[kFLAGS.GARGOYLE_BODY_MATERIAL] == 2) {
-					maxStrCap2 += 50;
-					maxTouCap2 += 250;
-					maxSpeCap2 += 30;
-<<<<<<< .merge_file_a21560
-					maxIntCap2 += 165;
-=======
-					maxIntCap2 += 195;
->>>>>>> .merge_file_a09572
+					maxStrCap2 += 100;
+					maxTouCap2 += 510;
+					maxSpeCap2 += 80;
+					maxIntCap2 += 300;
 				}
 				if (hasPerk(PerkLib.GargoylePure)) {
-					maxWisCap2 += 80;
-					maxLibCap2 -= 10;
+					maxWisCap2 += 130;
+					maxLibCap2 -= 20;
 					currentSen -= 10;
 				}
 				if (hasPerk(PerkLib.GargoyleCorrupted)) {
-					maxWisCap2 -= 10;
-					maxLibCap2 += 80;
+					maxWisCap2 -= 20;
+					maxLibCap2 += 140;
 				}
 			}
+			if (fairyScore() >= 23) {
+				maxStrCap2 -= 20;
+				maxTouCap2 -= 10;
+				if (fairyScore() >= 32) {
+					maxSpeCap2 += 660;
+					maxIntCap2 += 660;
+					maxWisCap2 += 200;
+					currentSen += 50;
+				}
+				else if (fairyScore() >= 29) {
+					maxSpeCap2 += 600;
+					maxIntCap2 += 600;
+					maxWisCap2 += 175;
+					currentSen += 40;
+				}
+				else if (fairyScore() >= 26) {
+					maxSpeCap2 += 540;
+					maxIntCap2 += 540;
+					maxWisCap2 += 150;
+					currentSen += 30;
+				}
+				else {
+					maxSpeCap2 += 480;
+					maxIntCap2 += 480;
+					maxWisCap2 += 125;
+					currentSen += 20;
+				}
+			}//+10/10-20
 			score = atlachNachaScore();
 			if (score >= 30) {
 				//30 Greater Atlach Nacha(360) +115 Strength +135 Toughness +150 Intelligence +150 Libido -50 wisdom +50 min/max sensitivity
@@ -12870,11 +12839,8 @@ use namespace CoC;
 			if (!hasPerk(PerkLib.TitanicStrength) && statStore.hasBuff('Titanic Strength')) statStore.removeBuffs('Titanic Strength');
 			if (hasPerk(PerkLib.Enigma)) statStore.replaceBuffObject({'str.mult':((0.01 * Math.round(inte/2))+(0.01 * Math.round(wis/2))),'tou.mult':((0.01 * Math.round(inte/2))+(0.01 * Math.round(wis/2)))}, 'Enigma', { text: 'Enigma' });
 			if (!hasPerk(PerkLib.Enigma) && statStore.hasBuff('Enigma')) statStore.removeBuffs('Enigma');
-<<<<<<< .merge_file_a21560
-=======
 			if (hasPerk(PerkLib.StrengthOfStone)) statStore.replaceBuffObject({'str.mult':(0.01 * Math.round(tou/2))}, 'Strength of stone', { text: 'Strength of stone' });
 			if (!hasPerk(PerkLib.StrengthOfStone) && statStore.hasBuff('Strength of stone')) statStore.removeBuffs('Strength of stone');
->>>>>>> .merge_file_a09572
 			var power:Number = 0;
 			if (hasPerk(PerkLib.BullStrength)){
 				if (cowScore() >=15) power = lactationQ()*0.001;
@@ -12915,9 +12881,7 @@ use namespace CoC;
 			}, "Racials", {text:"Racials"});
 		}
 
-<<<<<<< .merge_file_a21560
-=======
-		public function removeAllRacialMutation(){
+		public function removeAllRacialMutation():void {
 			if (hasPerk(PerkLib.ArachnidBookLung)) {
 				removePerk(PerkLib.ArachnidBookLung);
 				perkPoints += 1;
@@ -13456,7 +13420,6 @@ use namespace CoC;
 			}
 		}
 
->>>>>>> .merge_file_a09572
 		public function requiredXP():int {
 			var xpm:Number = 100;
 			if (level >= 42) xpm += 100;
@@ -15180,8 +15143,4 @@ use namespace CoC;
 			EngineCore.statScreenRefresh();
 		}
 	}
-<<<<<<< .merge_file_a21560
 }
-=======
-}
->>>>>>> .merge_file_a09572

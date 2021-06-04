@@ -41,7 +41,7 @@ use namespace CoC;
 <<<<<<< .merge_file_a08784
 =======
 
-			var ChanceToFindTheDen = 20;
+			var ChanceToFindTheDen:Number = 20;
 			if (SceneLib.dungeons.canFindDenOfDesire()) ChanceToFindTheDen -= 9;
 			if (flags[kFLAGS.DEN_OF_DESIRE_QUEST] > 0) ChanceToFindTheDen -= 9;
 			//Den of Desire
