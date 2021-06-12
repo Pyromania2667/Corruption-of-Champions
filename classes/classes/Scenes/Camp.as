@@ -2047,8 +2047,8 @@ public class Camp extends NPCAwareContent{
 
 	private function HerbalismMenu():void {
 		hideMenus();
-		menu();
 		clearOutput();
+		menu();
 		outputText("You move to Rathazul’s side alchemy equipment. Using these tools you can process raw natural materials into poultices and medicines.\n\nWhat would you like to craft?");
 		//Poultrice
 		addButton(0, "Poultice", HerbalismCraftItem,CoC.instance.consumables.HEALHERB, "healing herb", PotionType.POULTICE).hint("Craft a Poultrice using healing herb.\n\nHealing herbs currently owned "+player.itemCount(CoC.instance.consumables.HEALHERB)+"")
@@ -2082,8 +2082,8 @@ public class Camp extends NPCAwareContent{
 
 	private function Garden():void{
 		hideMenus();
-		menu();
 		clearOutput();
+		menu();
 		//Checks if pc has this ingrediant growing
 		outputText("You move over to your gardening fields. You can plant and grow herbs here.");
 		//plants typicaly takes 1 week to grow from a single ingrediant into 5 new ingrediants sample player can use this button to go to the harvest selection
@@ -2094,8 +2094,8 @@ public class Camp extends NPCAwareContent{
 
 	private function Seed():void{
 		hideMenus();
-		menu();
 		clearOutput();
+		menu();
 		outputText("What kind of herb would you like to grow?");
 		addButton(0, "Healing herb", Seed2,CoC.instance.consumables.HEALHERB).hint("Plant new seeds.");
 		if (HarvestMoonScenes.harvestmoonstageHH >= HarvestMoonScenes.HARVESTMOONPENDINGHH) addButtonDisabled(0,"Healing herb", "You already got crops growing.");
@@ -2145,8 +2145,8 @@ public class Camp extends NPCAwareContent{
 
 	private function Harvest(HealingHerb:Boolean = false, MoonGrass:Boolean = false, Snakebane:Boolean = false, Ironweed:Boolean = false, BladeFern:Boolean = false):void{
 		hideMenus();
-		menu();
 		clearOutput();
+		menu();
 		outputText("You survey your crops for readied harvests.");
 		if (!HealingHerb && !MoonGrass && !Snakebane && !Ironweed && !BladeFern) outputText("\n\n There is no crops left to harvest you will need to plan new seeds.");
 		if (HealingHerb)
@@ -2179,8 +2179,8 @@ public class Camp extends NPCAwareContent{
 
 	public function Harvest2(ItemID:SimpleConsumable,IngrediantName:String):void{
 		hideMenus();
-		menu();
 		clearOutput();
+		menu();
 		if (ItemID == CoC.instance.consumables.HEALHERB) HarvestMoonScenes.harvestmoonstageHH = HarvestMoonScenes.HARVESTMOONNOTSTARTEDHH;
 		if (ItemID == CoC.instance.consumables.MOONGRASS) HarvestMoonScenes.harvestmoonstageMG = HarvestMoonScenes.HARVESTMOONNOTSTARTEDMG;
 		if (ItemID == CoC.instance.consumables.SNAKEBANE) HarvestMoonScenes.harvestmoonstageSB = HarvestMoonScenes.HARVESTMOONNOTSTARTEDSB;
@@ -2213,7 +2213,7 @@ public class Camp extends NPCAwareContent{
 	public function recoverHerbLoot6():void{
 		clearOutput();
 		outputText("Youve collected all of the ingrediants.");
-		doNext(Harvest);
+		doNext(curry(Harvest, HarvestMoonScenes.harvestmoonstageHH >= 1, HarvestMoonScenes.harvestmoonstageMG >= 1, HarvestMoonScenes.harvestmoonstageSB >= 1, HarvestMoonScenes.harvestmoonstageIW >= 1, HarvestMoonScenes.harvestmoonstageBF >= 1));
 	}
 
 	private function HerbalismCraftItem(ItemID:SimpleConsumable, IngrediantName:String, CraftingResult:PotionType):void {
@@ -2931,13 +2931,7 @@ private function SparrableNPCsMenu():void {
 			/******************************************************************/
 			/*       SLEEP WITH SYSTEM GOOOO                                  */
 			/******************************************************************/
-			if (player.isGargoyle()) {
-				outputText("You sit on your pedestal, your body petrifying like stone as you sleep for " + num2Text(timeQ) + " ");
-				if (timeQ == 1) outputText("hour.\n");
-				else outputText("hours.\n")
-				sleepRecovery(true);
-				return;
-			} else if (flags[kFLAGS.CAMP_BUILT_CABIN] > 0 && flags[kFLAGS.CAMP_CABIN_FURNITURE_BED] > 0 && (flags[kFLAGS.SLEEP_WITH] == "" || flags[kFLAGS.SLEEP_WITH] == "Marble")) {
+			if (flags[kFLAGS.CAMP_BUILT_CABIN] > 0 && flags[kFLAGS.CAMP_CABIN_FURNITURE_BED] > 0 && (flags[kFLAGS.SLEEP_WITH] == "" || flags[kFLAGS.SLEEP_WITH] == "Marble")) {
 				outputText("You enter your cabin to turn yourself in for the night. ")
 			}
 			//Marble Sleepies
@@ -3035,14 +3029,22 @@ private function SparrableNPCsMenu():void {
 					outputText(".  She sleeps next to you, just barely touching you.  You rub her shoulder affectionately before the two of you nod off.");
 				}
 				outputText("\n");
+			} else if (flags[kFLAGS.SLEEP_WITH] == "Helia" && SceneLib.helScene.followerHel()) {
+				outputText("You curl up next to Helia, planning to sleep for " + num2Text(timeQ) + " ");
+
 			} else {
-				if (flags[kFLAGS.SLEEP_WITH] == "Helia" && SceneLib.helScene.followerHel()) {
-					outputText("You curl up next to Helia, planning to sleep for " + num2Text(timeQ) + " ");
-				}
 				//Normal sleep message
-				else outputText("You curl up, planning to sleep for " + num2Text(timeQ) + " ");
-				if (timeQ == 1) outputText("hour.\n");
-				else outputText("hours.\n");
+				if (player.isGargoyle()) {
+					outputText("You sit on your pedestal, your body petrifying like stone as you sleep for " + num2Text(timeQ) + " ");
+					if (timeQ == 1) outputText("hour.\n");
+					else outputText("hours.\n")
+					sleepRecovery(false);
+				}
+				else{
+					outputText("You curl up, planning to sleep for " + num2Text(timeQ) + " ");
+					if (timeQ == 1) outputText("hour.\n");
+					else outputText("hours.\n");
+				}
 			}
 			sleepRecovery(true);
 		} else {

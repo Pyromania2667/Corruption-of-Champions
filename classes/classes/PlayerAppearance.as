@@ -1767,6 +1767,10 @@ public class PlayerAppearance extends BaseContent {
 				outputText(" Your hairs are tied up into a pair of pigtail.");
 			else if(hairStyle == Hair.DWARVEN)
 				outputText(" Your hairs are tied up into a dwarven fashion.");
+			else if(hairStyle == Hair.SNOWLILY)
+				outputText(" Your hairs are tied up into a snow lily blossom fashion.");
+			else if(hairStyle == Hair.FOURWIND)
+				outputText(" Your hairs are tied up in the traditionnal four wind braid style.");
 		}
 	}
 
@@ -2296,8 +2300,8 @@ public class PlayerAppearance extends BaseContent {
 		//Atlach Nacha
 		score = player.atlachNachaScore();
 		if (score >= 30) outputText("\n<font color=\"#0000a0\">Greater Atlach Nacha: " + score + " (+115% to Str racial multi, +135% to Tou racial multi, +150% to Int racial multi, +150% to Lib racial multi, -50% to Wis racial multi, +50 to Sens)</font>");
-		else if (score >= 18) outputText("\n<font color=\"#0000a0\">Atlach Nacha: " + score + " (+80% to Str racial multi, +90% to Tou racial multi, +100% to Int racial multi, +100% to Lib racial multi, -50% to Wis racial multi, +50 to Sens)</font>");
-		else if (score >= 10) outputText("\n<font color=\"#0000a0\">Incomplete Atlach Nacha: " + score + " (+50% to Tou racial multi, +75% to Int racial multi, +20% to Lib racial multi, -20% to Wis racial multi)</font>");
+		else if (score >= 21) outputText("\n<font color=\"#0000a0\">Atlach Nacha: " + score + " (+280% to Str racial multi, +315% to Tou racial multi, +350% to Int racial multi, +350% to Lib racial multi, -50% to Wis racial multi, +90 to Sens)</font>");
+		else if (score >= 14) outputText("\n<font color=\"#0000a0\">Incomplete Atlach Nacha: " + score + " (+60% to Tou racial multi, +100% to Int racial multi, +40% to Lib racial multi, -10% to Wis racial multi)</font>");
 		else if (score >= 1) outputText("\n<font color=\"#008000\">Incomplete Atlach Nacha: " + score + "</font>");
 		else if (score < 1) outputText("\n<font color=\"#ff0000\">Half Spider-morph: 0</font>");
 		//Avian
@@ -2458,9 +2462,9 @@ public class PlayerAppearance extends BaseContent {
 		else if (player.foxScore() < 1) outputText("\n<font color=\"#ff0000\">Half Fox: 0</font>");
 		//Fairy
 		if (player.fairyScore() >= 32) outputText("\n<font color=\"#0000a0\">Titania: " + player.fairyScore() + " (-20% to Str racial multi, -10% to Tou racial multi, +660% to Spe racial multi, +660% to Int racial multi, +200% to Wis racial multi, +50 Sens)</font>");
-		if (player.fairyScore() >= 29) outputText("\n<font color=\"#0000a0\">Fairy Queen: " + player.fairyScore() + " (-20% to Str racial multi, -10% to Tou racial multi, +600% to Spe racial multi, +600% to Int racial multi, +175% to Wis racial multi, +40 Sens)</font>");
-		if (player.fairyScore() >= 26) outputText("\n<font color=\"#0000a0\">Noble Fairy: " + player.fairyScore() + " (-20% to Str racial multi, -10% to Tou racial multi, +540% to Spe racial multi, +540% to Int racial multi, +150% to Wis racial multi, +30 Sens)</font>");
-		if (player.fairyScore() >= 23) outputText("\n<font color=\"#0000a0\">Greater Fairy: " + player.fairyScore() + " (-20% to Str racial multi, -10% to Tou racial multi, +480% to Spe racial multi, +480% to Int racial multi, +125% to Wis racial multi, +20 Sens)</font>");
+		else if (player.fairyScore() >= 29) outputText("\n<font color=\"#0000a0\">Fairy Queen: " + player.fairyScore() + " (-20% to Str racial multi, -10% to Tou racial multi, +600% to Spe racial multi, +600% to Int racial multi, +175% to Wis racial multi, +40 Sens)</font>");
+		else if (player.fairyScore() >= 26) outputText("\n<font color=\"#0000a0\">Noble Fairy: " + player.fairyScore() + " (-20% to Str racial multi, -10% to Tou racial multi, +540% to Spe racial multi, +540% to Int racial multi, +150% to Wis racial multi, +30 Sens)</font>");
+		else if (player.fairyScore() >= 23) outputText("\n<font color=\"#0000a0\">Greater Fairy: " + player.fairyScore() + " (-20% to Str racial multi, -10% to Tou racial multi, +480% to Spe racial multi, +480% to Int racial multi, +125% to Wis racial multi, +20 Sens)</font>");
 		else if (player.fairyScore() >= 1) outputText("\n<font color=\"#008000\">Fairy: " + player.fairyScore() + "</font>");
 		else if (player.fairyScore() < 1) outputText("\n<font color=\"#ff0000\">Fairy: 0</font>");
 		//Frost Wyrm
@@ -2997,4 +3001,4 @@ public class PlayerAppearance extends BaseContent {
 		}
 	}
 }
-}
+}

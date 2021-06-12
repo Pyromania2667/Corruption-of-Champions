@@ -950,7 +950,7 @@ public class PlayerEvents extends BaseContent implements TimeAwareInterface {
 				}
 				//Armor daily event
 				//Scandalous succubus armor and other corruption updates
-				if ((player.armor == armors.SCANSC || player.jewelry == jewelries.DMTO || player.jewelry2 == jewelries.DMTO || player.jewelry3 == jewelries.DMTO || player.jewelry4 == jewelries.DMTO) && player.cor < 100) {
+				if ((player.armor == armors.SCANSC || player.miscJewelry == miscjewelries.DMAGETO || player.miscJewelry2 == miscjewelries.DMAGETO) && player.cor < 100) {
 					outputText("\nCorruption seethes from your defiled equipment into you.\n");
 					player.cor += 5;
 				}
@@ -2716,20 +2716,22 @@ public class PlayerEvents extends BaseContent implements TimeAwareInterface {
 <<<<<<< .merge_file_a18212
 =======
 			//Process crops harvest moon
-			if (HarvestMoonScenes.harvestmoonstageHH < 7 && HarvestMoonScenes.harvestmoonstageHH > 0) {
-				HarvestMoonScenes.harvestmoonstageHH += 1;
-			}
-			if (HarvestMoonScenes.harvestmoonstageMG < 7 && HarvestMoonScenes.harvestmoonstageMG > 0) {
-				HarvestMoonScenes.harvestmoonstageMG += 1;
-			}
-			if (HarvestMoonScenes.harvestmoonstageSB < 7 && HarvestMoonScenes.harvestmoonstageSB > 0) {
-				HarvestMoonScenes.harvestmoonstageSB += 1;
-			}
-			if (HarvestMoonScenes.harvestmoonstageIW < 7 && HarvestMoonScenes.harvestmoonstageIW > 0) {
-				HarvestMoonScenes.harvestmoonstageIW += 1;
-			}
-			if (HarvestMoonScenes.harvestmoonstageBF < 7 && HarvestMoonScenes.harvestmoonstageBF > 0) {
-				HarvestMoonScenes.harvestmoonstageBF += 1;
+			if (CoC.instance.model.time.hours == 24){
+				if (HarvestMoonScenes.harvestmoonstageHH < 7 && HarvestMoonScenes.harvestmoonstageHH > 0) {
+					HarvestMoonScenes.harvestmoonstageHH += 1;
+				}
+				if (HarvestMoonScenes.harvestmoonstageMG < 7 && HarvestMoonScenes.harvestmoonstageMG > 0) {
+					HarvestMoonScenes.harvestmoonstageMG += 1;
+				}
+				if (HarvestMoonScenes.harvestmoonstageSB < 7 && HarvestMoonScenes.harvestmoonstageSB > 0) {
+					HarvestMoonScenes.harvestmoonstageSB += 1;
+				}
+				if (HarvestMoonScenes.harvestmoonstageIW < 7 && HarvestMoonScenes.harvestmoonstageIW > 0) {
+					HarvestMoonScenes.harvestmoonstageIW += 1;
+				}
+				if (HarvestMoonScenes.harvestmoonstageBF < 7 && HarvestMoonScenes.harvestmoonstageBF > 0) {
+					HarvestMoonScenes.harvestmoonstageBF += 1;
+				}
 			}
 >>>>>>> .merge_file_a31232
 			//Wrap it up
@@ -2872,7 +2874,7 @@ public class PlayerEvents extends BaseContent implements TimeAwareInterface {
 					EngineCore.doNext(playerMenu);
 					return true;
 				}
-				if (player.lib > 50 || player.lust > 40) { //Randomly generated dreams here
+				if (player.lib > (player.libStat.max * 0.5) || player.lust > (player.maxLust() * 0.4)) { //Randomly generated dreams here
 					if (dreams.dreamSelect()) return true;
 				}
 			}
@@ -2900,4 +2902,4 @@ public class PlayerEvents extends BaseContent implements TimeAwareInterface {
 		}
 		//End of Interface Implementation
 	}
-}
+}

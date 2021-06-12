@@ -4,6 +4,7 @@ import classes.BodyParts.Face;
 import classes.BodyParts.Tail;
 import classes.GlobalFlags.kFLAGS;
 import classes.Items.JewelryLib;
+import classes.Items.NecklaceLib;
 
 /**
 	 * Character class for player and NPCs. Has subclasses Player and NonPlayer.
@@ -756,6 +757,7 @@ import classes.Items.JewelryLib;
 		public override function maxSoulforce():Number
 		{
 			var max:Number = 50;
+			if (hasPerk(PerkLib.FlyingSwordPath)) max += 50;
 			if (hasPerk(PerkLib.DemonicLethicite)) max += Math.round(lib);
 			if (hasPerk(PerkLib.Metamorph)) max += (50 * (1 + perkv1(PerkLib.Metamorph)));
 			if (flags[kFLAGS.SOUL_CULTIVATION] >= 2) max += 25;
@@ -831,7 +833,7 @@ import classes.Items.JewelryLib;
 			if (jewelryEffectId2 == JewelryLib.MODIFIER_SF) max += jewelryEffectMagnitude2;//+100
 			if (jewelryEffectId3 == JewelryLib.MODIFIER_SF) max += jewelryEffectMagnitude3;//+100
 			if (jewelryEffectId4 == JewelryLib.MODIFIER_SF) max += jewelryEffectMagnitude4;//+100
-			if (necklaceName == "soulmetal necklace") max += necklaceEffectMagnitude;//+100
+			if (necklaceEffectId == NecklaceLib.MODIFIER_SF) max += necklaceEffectMagnitude;//+100	 necklaceName == "soulmetal necklace"
 			max += level * 5;
 			if (level <= 6) max += level * 5;
 			if (hasPerk(PerkLib.UnlockSpirit)) max += level * 5;
@@ -1013,9 +1015,10 @@ import classes.Items.JewelryLib;
 			var max1:Number = 0;
 			if (hasPerk(PerkLib.ICastAsuraFist)) max1 += maxOverWrath();
 			else max1 += maxWrath();
-			var max2:Number = 0.8;
-			if (flags[kFLAGS.GAME_DIFFICULTY] < 2) max2 += 0.2;
+			var max2:Number = 0.75;
+			if (flags[kFLAGS.GAME_DIFFICULTY] < 2) max2 += 0.25;
 			//if (hasPerk(PerkLib.)) max2 += 0.1;
+			if (necklaceName == "Wrathless") max2 += 0.25;
 			max1 *= max2;
 			max1 = Math.round(max1);
 			return max1;
@@ -1024,8 +1027,8 @@ import classes.Items.JewelryLib;
 			var max1:Number = 0;
 			if (hasPerk(PerkLib.ICastAsuraFist)) max1 += maxOverWrath();
 			else max1 += maxWrath();
-			var max2:Number = 0.6;
-			if (flags[kFLAGS.GAME_DIFFICULTY] < 2) max2 += 0.4;
+			var max2:Number = 0.5;
+			if (flags[kFLAGS.GAME_DIFFICULTY] < 2) max2 += 0.5;
 			if (hasPerk(PerkLib.MagesWrath)) max2 += 0.05;
 			if (hasPerk(PerkLib.MagesWrathEx)) max2 += 0.05;
 			if (hasPerk(PerkLib.WarMageNovice)) max2 += 0.05;
@@ -1033,6 +1036,7 @@ import classes.Items.JewelryLib;
 			if (hasPerk(PerkLib.WarMageAdept)) max2 += 0.05;
 			if (hasPerk(PerkLib.WarMageExpert)) max2 += 0.05;
 			if (hasPerk(PerkLib.WarMageMaster)) max2 += 0.05;
+			if (necklaceName == "Wrathless") max2 += 0.5;
 			max1 *= max2;
 			max1 = Math.round(max1);
 			return max1;
